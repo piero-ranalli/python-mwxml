@@ -70,6 +70,9 @@ class Revision(mwtypes.Revision):
                 text_location = sub_element.attr('location')
             elif tag == "content":
                 contents.append(Content.from_element(sub_element))
+            elif tag == "origin":
+                # try doing nothing...
+                donothing_donothing_donothing = True
             else:
                 raise MalformedXML("Unexpected tag found when processing " +
                                    "a <revision>: '{0}'".format(tag))
